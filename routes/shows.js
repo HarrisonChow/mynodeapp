@@ -5,5 +5,8 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.send('Shows is here!');
 });
+router.post('/', function(req, res, next) {
+  res.send(req.body);
+})
 
 module.exports = router;
