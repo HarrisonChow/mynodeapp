@@ -22,7 +22,9 @@
     "node": "5.7.0"
   },
   "main": "app.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "chai-http": "^3.0.0"
+  },
   "author": "",
   "license": "ISC",
   "description": ""
