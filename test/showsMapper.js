@@ -94,4 +94,22 @@ describe('showsMapper', function() {
       title: "title2"
     }]);
   });
+
+  it("should not broke if image is not found in shows", function() {
+    var shows = [
+      {
+        "episodeCount": 1,
+        "drm": true,
+        "slug": "show/slug2",
+        "title": "title2",
+      }
+    ];
+
+    expect(showsMapper(shows)).to.eql([{
+      image: undefined,
+      slug: "show/slug2",
+      title: "title2"
+    }]);
+  });
+  
 });
