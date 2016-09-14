@@ -41,6 +41,7 @@ describe('showsMapper', function() {
     var shows = [
       {
         "drm": false,
+        "episodeCount": 1,
         "image": {
           "showImage": "picture1.jpg"
         },
@@ -48,6 +49,36 @@ describe('showsMapper', function() {
         "title": "title1",
       },
       {
+        "drm": true,
+        "episodeCount": 1,
+        "image": {
+          "showImage": "picture2.jpg"
+        },
+        "slug": "show/slug2",
+        "title": "title2",
+      }
+    ];
+
+    expect(showsMapper(shows)).to.eql([{
+      image: "picture2.jpg",
+      slug: "show/slug2",
+      title: "title2"
+    }]);
+  });
+
+  it('should get only the shows that episode count larger than zero', function() {
+    var shows = [
+      {
+        "episodeCount": 0,
+        "drm": true,
+        "image": {
+          "showImage": "picture1.jpg"
+        },
+        "slug": "show/slug1",
+        "title": "title1",
+      },
+      {
+        "episodeCount": 3,
         "drm": true,
         "image": {
           "showImage": "picture2.jpg"
